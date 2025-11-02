@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USSD Dashboard | Telemedicine</title>
+    <title>Mobile App Dashboard | Telemedicine</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/jspdf.umd.min.js"></script>
@@ -25,8 +25,8 @@ if (!isset($_SESSION['admin_logged_in'])) {
             <h2>Doc O'clock Admin</h2>
         </div>
         <ul class="sidebar-menu">
-            <li class="active"><a href="dashboard.php">USSD</a></li>
-            <li><a href="mobile_dashboard.php">Mobile Application</a></li>
+            <li><a href="dashboard.php">USSD</a></li>
+            <li class="active"><a href="mobile_dashboard.php">Mobile Application</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
     </div>
@@ -40,28 +40,28 @@ if (!isset($_SESSION['admin_logged_in'])) {
         </nav>
 
         <div class="content-header">
-            <h1>USSD Dashboard Overview</h1>
-            <p>Track transactions, users, and performance metrics.</p>
+            <h1>Mobile App Dashboard Overview</h1>
+            <p>Track app usage, users, and performance metrics.</p>
         </div>
 
         <div class="stats-grid">
             <div class="stat-card">
-                <h3>Today’s Transactions</h3>
-                <p id="today-count">254</p>
+                <h3>Today's Active Users</h3>
+                <p id="today-count">178</p>
             </div>
             <div class="stat-card">
-                <h3>Last Month</h3>
-                <p id="month-count">4,312</p>
+                <h3>Monthly Active Users</h3>
+                <p id="month-count">2,845</p>
             </div>
             <div class="stat-card">
-                <h3>This Year</h3>
-                <p id="year-count">38,790</p>
+                <h3>Total Downloads</h3>
+                <p id="year-count">15,620</p>
             </div>
         </div>
 
         <div class="chart-container">
             <div class="chart-header">
-                <h2>Transaction Trends</h2>
+                <h2>App Usage Trends</h2>
                 <div class="period-filter">
                     <button class="filter-btn active" data-period="day">Day</button>
                     <button class="filter-btn" data-period="month">Month</button>
