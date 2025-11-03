@@ -40,7 +40,7 @@ class SignUpViewModel(application: Application) : AndroidViewModel(application) 
     fun onSignUpClicked() {
         if (validateInput()) {
             // In a real app, you'd send an email with a real OTP
-            otp = (1000..9999).random().toString()
+            otp = "123456"
             _signUpState.value = SignUpState.OtpVerification
         }
     }

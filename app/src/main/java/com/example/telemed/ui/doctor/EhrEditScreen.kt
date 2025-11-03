@@ -2,7 +2,7 @@ package com.example.telemed.ui.doctor
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -22,7 +22,7 @@ fun EhrEditScreen(
 ) {
     var diagnosis by remember { mutableStateOf(ehr?.diagnosis ?: "") }
     var prescription by remember { mutableStateOf(ehr?.prescription ?: "") }
-    var notes by remember { mutableStateof(ehr?.notes ?: "") }
+    var notes by remember { mutableStateOf(ehr?.notes ?: "") }
 
     Scaffold(
         topBar = {
@@ -30,7 +30,7 @@ fun EhrEditScreen(
                 title = { Text(if (ehr == null) "Add EHR" else "Edit EHR") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
