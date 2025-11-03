@@ -1,4 +1,4 @@
-package com.example.telemed.ui.doctor
+package com.example.telemed.ui.patient
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -22,26 +22,27 @@ import com.example.telemed.ui.VideoCallScreen
 import com.example.telemed.ui.theme.TelemedTheme
 import kotlinx.coroutines.launch
 
-sealed class DoctorScreen(val route: String, val title: String) {
-    object Calendar : DoctorScreen("calendar", "Manage Calendar")
-    object PatientRecords : DoctorScreen("patient_records", "Patient Records")
-    object Settings : DoctorScreen("settings", "Settings")
-    object PatientDetails : DoctorScreen("patient_details/{appointmentId}/{patientId}", "Patient Details")
-    object Chat : DoctorScreen("chat/{appointmentId}/{receiverId}", "Chat")
-    object VideoCall : DoctorScreen("video_call", "Video Call")
+sealed class PatientScreen(val route: String, val title: String) {
+    object BookAppointment : PatientScreen("book_appointment", "Book Appointment")
+    object ViewAppointments : PatientScreen("view_appointments", "View Appointments")
+    object Ehr : PatientScreen("ehr", "EHR")
+    object Settings : PatientScreen("settings", "Settings")
+    object Chat : PatientScreen("chat/{appointmentId}/{receiverId}", "Chat")
+    object VideoCall : PatientScreen("video_call", "Video Call")
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DoctorDashboardScreen(navController: NavController) {
+fun PatientDashboardScreen(navController: NavController) {
     val nestedNavController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
     val navigationItems = listOf(
-        DoctorScreen.Calendar,
-        DoctorScreen.PatientRecords,
-        DoctorScreen.Settings
+        PatientScreen.BookAppointment,
+        PatientScreen.ViewAppointments,
+        PatientScreen.Ehr,
+        PatientScreen.Settings
     )
 
     ModalNavigationDrawer(
@@ -66,7 +67,7 @@ fun DoctorDashboardScreen(navController: NavController) {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    title = { Text("Doctor Dashboard") },
+                    title = { Text("Patient Dashboard") },
                     navigationIcon = {
                         IconButton(onClick = {
                             scope.launch {
@@ -88,29 +89,23 @@ fun DoctorDashboardScreen(navController: NavController) {
         ) { paddingValues ->
             NavHost(
                 navController = nestedNavController,
-                startDestination = DoctorScreen.PatientRecords.route,
+                startDestination = PatientScreen.ViewAppointments.route,
                 modifier = Modifier.padding(paddingValues)
             ) {
-                composable(DoctorScreen.Calendar.route) {
-                    CalendarScreen()
+                composable(PatientScreen.BookAppointment.route) {
+                    BookAppointmentScreen()
                 }
-                composable(DoctorScreen.PatientRecords.route) {
-                    PatientRecordsScreen(navController = nestedNavController)
+                composable(PatientScreen.ViewAppointments.route) {
+                    ViewAppointmentsScreen(navController = nestedNavController)
                 }
-                composable(DoctorScreen.Settings.route) {
+                composable(PatientScreen.Ehr.route) {
+                    EhrScreen()
+                }
+                composable(PatientScreen.Settings.route) {
                     SettingsScreen()
                 }
                 composable(
-                    route = DoctorScreen.PatientDetails.route,
-                    arguments = listOf(
-                        navArgument("appointmentId") { type = NavType.IntType },
-                        navArgument("patientId") { type = NavType.IntType }
-                    )
-                ) {
-                    PatientDetailsScreen(navController = nestedNavController)
-                }
-                composable(
-                    route = DoctorScreen.Chat.route,
+                    route = PatientScreen.Chat.route,
                     arguments = listOf(
                         navArgument("appointmentId") { type = NavType.IntType },
                         navArgument("receiverId") { type = NavType.IntType }
@@ -119,7 +114,7 @@ fun DoctorDashboardScreen(navController: NavController) {
                     val receiverId = it.arguments?.getInt("receiverId") ?: -1
                     ChatScreen(receiverId = receiverId)
                 }
-                composable(DoctorScreen.VideoCall.route) {
+                composable(PatientScreen.VideoCall.route) {
                     VideoCallScreen(nestedNavController)
                 }
             }
@@ -129,8 +124,8 @@ fun DoctorDashboardScreen(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun DoctorDashboardScreenPreview() {
+fun PatientDashboardScreenPreview() {
     TelemedTheme {
-        DoctorDashboardScreen(navController = rememberNavController())
+        PatientDashboardScreen(navController = rememberNavController())
     }
 }
