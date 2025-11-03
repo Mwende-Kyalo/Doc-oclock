@@ -1,19 +1,20 @@
-**Doc O'clock: A Telemedicine Mobile Application in Kenya**
+# Doc O'clock: A Telemedicine Mobile Application in Kenya
 
-**Description**
+## Description
+
 Doc O’Clock is a telemedicine and USSD-based healthcare system that connects patients and doctors through a mobile app and a web-based admin dashboard. The users (patients) can book appointments based on the dates that are convenient to them among the available list, edit and delete them, and make payments for the consultations beforehand. They can hold a virtual consultation via either video or voice call, view the electronic health records (EHRs), receive the e-prescription issues by the doctor after the  consultation and order the medicine through MyDawa to be delivered to their doorstep. As for the doctors, they can view, edit and delete their appointments, hold the virtual consultations, view and edit the patient's EHR accordingly, and issue e-prescriptions once they have come to a disgnosis. As for the admins, there is a web-based dashboard where they can view the usage of both the application and the USSD modules across various periods of time visually, they can export the reports as pdf and also manage the accounts of the users. The USSD module was built to cater for the offline users and caters to both English and Swahili speakers. Its users can book, edit and delete appointments, make payments for the consultations beforehand then receive an SMS notification confirming their booking. The virtual consultations are to be held via voice call and their e-prescriptions and diagnosis are to be issues via text message.
 
-**Dependencies**
-  XAMPP 
-  PHP 8+
-  Composer 
-  Ngrok 
-  Africa’s Talking API 
-  TinyPesa API 
-  MyDawa API
-  PHPMailer 
+## Dependencies
+  - XAMPP 
+  - PHP 8+
+  - Composer 
+  - Ngrok 
+  - Africa’s Talking API 
+  - TinyPesa API 
+  - MyDawa API
+  - PHPMailer 
   
-**Installation Steps**
+## Installation Steps
 
 For the Admin Dashboard:
 1. Clone the repository
@@ -45,17 +46,19 @@ For the Mobile Application:
 3. Sync gradle files
 4. Run the application
 
-**Inputs and Outputs**
+## Inputs and Outputs
 a) Inputs:
-    USSD menu selection numbers
-    Log in credentials
-b) Outputs:
-    USSD menu selection options based on the choices made
-    Dashboard visualizations and pdf reports
-    SMS confirmations
+- USSD menu selection numbers
+- Log in credentials
     
-**Codebase Organization**
+b) Outputs:
+- USSD menu selection options based on the choices made
+- Dashboard visualizations and pdf reports
+- SMS confirmations
+    
+## Codebase Organization
 a) For the admin dashboard and the USSD functionalities:
+
     USSD/
     │
     ├── assets/
@@ -90,7 +93,9 @@ a) For the admin dashboard and the USSD functionalities:
     ├── composer.json                 # PHP dependencies and autoload info
     ├── composer.lock
     └── .gitignore                    # Ignored files (vendor, config secrets, etc.)
+    
 b) For the mobile Application
+
     Telemed
      └── app
           └── src
