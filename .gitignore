@@ -17,6 +17,12 @@ migrate_working_dir/
 *.ipr
 *.iws
 .idea/
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
 
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
@@ -43,6 +49,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+.gradle
+/local.properties
+/captures
+.externalNativeBuild
+.cxx
+local.properties
 
 # API Configuration (contains sensitive credentials)
 lib/config/api_config.dart
