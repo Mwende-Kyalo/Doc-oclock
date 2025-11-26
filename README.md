@@ -40,10 +40,10 @@ For the USSD:
 7. Run the application.
 
 For the Mobile Application:
-1. Install Andoid Studio and set it up.
+1. Install Visual Studio and set it up.
 2. Clone the repository
     https://github.com/Mwende-Kyalo/Doc-oclock/USSD/ussd_dashboard main branch
-3. Sync gradle files
+3. Run the flutter run command
 4. Run the application
 
 ## Inputs and Outputs
@@ -94,27 +94,7 @@ a) For the admin dashboard and the USSD functionalities:
     ├── composer.lock
     └── .gitignore                    # Ignored files (vendor, config secrets, etc.)
     
-b) For the mobile Application
-
-    Telemed
-     └── app
-          └── src
-               └── main
-                    └── java
-                         └── com.example.telemed
-                              ├── data
-                              │    └── local (Room entities, DAOs, database)
-                              ├── ui
-                              │    ├── doctor
-                              │    ├── patient
-                              │    ├── signin
-                              │    ├── signup
-                              │    ├── theme
-                              │    └── screens (.kt files)
-                              ├── viewmodel (logic controllers)
-                              └── MainActivity.kt
-
-c) For the Flutter Mobile Application:
+b) For the Mobile Application
 
 ```
 lib/
