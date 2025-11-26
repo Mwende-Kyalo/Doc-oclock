@@ -113,3 +113,72 @@ b) For the mobile Application
                               │    └── screens (.kt files)
                               ├── viewmodel (logic controllers)
                               └── MainActivity.kt
+
+c) For the Flutter Mobile Application:
+
+```
+lib/
+│
+├── config/
+│   ├── api_config.dart          # API configuration (see api_config.example.dart)
+│   └── api_config.example.dart  # Example API configuration template
+│
+├── l10n/                        # Localization files (English & Swahili)
+│   ├── app_en.arb
+│   └── app_sw.arb
+│
+├── models/                      # Data models
+│   ├── appointment_model.dart
+│   ├── availability_model.dart
+│   ├── call_history_model.dart
+│   ├── doctor_model.dart
+│   ├── ehr_model.dart
+│   ├── message_model.dart
+│   ├── payment_model.dart
+│   ├── prescription_model.dart
+│   ├── rating_review_model.dart
+│   └── user_model.dart
+│
+├── providers/                    # State management (Riverpod/Provider)
+│   ├── appointment_provider.dart
+│   ├── auth_provider.dart
+│   ├── ehr_provider.dart
+│   ├── prescription_provider.dart
+│   └── settings_provider.dart
+│
+├── routes/
+│   └── app_router.dart          # App routing configuration
+│
+├── screens/
+│   ├── auth/                    # Authentication screens
+│   ├── doctor/                  # Doctor-specific screens
+│   └── patient/                 # Patient-specific screens
+│
+├── services/                    # Business logic and API services
+│   ├── appointment_service.dart
+│   ├── call_history_service.dart
+│   ├── doctor_service.dart
+│   ├── ehr_service.dart
+│   ├── email_notification_service.dart
+│   ├── google_calendar_service.dart
+│   ├── google_sign_in_service.dart
+│   ├── gpt_medicine_service.dart
+│   ├── message_service.dart
+│   ├── patient_service.dart
+│   ├── payment_service.dart
+│   ├── prescription_service.dart
+│   ├── rating_review_service.dart
+│   ├── supabase_auth_service.dart
+│   └── tinypesa_service.dart
+│
+├── theme/
+│   └── app_theme.dart           # App theme configuration
+│
+├── widgets/                      # Reusable widgets
+│   ├── doctor_drawer.dart
+│   ├── doctor_scaffold.dart
+│   ├── patient_drawer.dart
+│   └── patient_scaffold.dart
+│
+└── main.dart                     # App entry point
+```
