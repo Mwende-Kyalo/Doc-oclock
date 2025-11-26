@@ -11,7 +11,6 @@ Doc O’Clock is a telemedicine and USSD-based healthcare system that connects p
   - Ngrok 
   - Africa’s Talking API 
   - TinyPesa API 
-  - MyDawa API
   - PHPMailer 
   
 ## Installation Steps
